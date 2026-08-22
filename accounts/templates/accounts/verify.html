@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+
+{% block content%}
+<form method="post" action="" novalidate class="d-flex flex-column align-items-center py-5">
+    {% csrf_token %}
+    <div class="row col-6 align-items-center justify-content-center">
+        {{form}}
+        <button class="btn btn-primary col-md-4 py-2" type="submit">Verify</button>
+    </div>
+</form>
+{% endblock content%}

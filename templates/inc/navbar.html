@@ -2,8 +2,21 @@
     <div class="container-fluid">
         <div class="navbar-nav w-100 d-flex justify-content-between align-items-center">
             <div class="d-flex">
-                <a class="nav-link {% if request.resolver_match.view_name == 'home_page:home' %} active {% endif %}"
-                   href='{% url "home_page:home" %}'>Home</a>
+                <a class="nav-link {% if request.resolver_match.view_name == 'home:home' %} active {% endif %}"
+                   href='{% url "home:home" %}'>Home</a>
+                {% if request.user.is_authenticated %}
+                    <div class="d-flex">
+                    <p class="mb-0 text-secondary fw-bold p-2">
+                        <i class="fa fa-user me-2" style="font-size:18px"></i>
+                        {{request.user.username}}
+                    </p>
+                    <a class="nav-link btn btn-light border border-2 {% if request.resolver_match.view_name == 'account:user_logout' %} active {% endif %}"
+                       href='#'>Logout</a>
+                </div>
+                {% else %}
+                    <a class="nav-link {% if request.resolver_match.view_name == 'accounts:user_register' %} active {% endif %}"
+                   href='{% url "accounts:user_register" %}'>Sign up</a>
+                {% endif %}
+            </div>
         </div>
-    </div>
 </nav>
