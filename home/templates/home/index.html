@@ -2,12 +2,12 @@
 
 {% block content %}
 <h2>Home page</h2>
-<div class="row">
+<div class="row gap-3">
     {% for product in products %}
     <div class="card col-md-3">
         <div class="card-body">
-            <img src="{{product.image.url}}" alt="{{product.name}}">
-            <a class="card-title" href="">{{product.name}}</a>
+            <img src="{{product.image.url}}" alt="{{product.name}}" class="card-img-top mb-3">
+            <a class="card-title " href="{{ product.get_absolute_url }}">{{product.name}}</a>
 
         </div>
     </div>

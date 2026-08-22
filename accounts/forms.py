@@ -81,3 +81,13 @@ class UserRegistrationForm(forms.Form):
 
 class VerifyCodeForm(forms.Form):
     code = forms.IntegerField(label="Code", widget=forms.NumberInput(attrs={"class": "form-control col=md-6 mb-3"}))
+
+
+class UserLoginForm(forms.Form):
+    phone_number = forms.CharField(max_length=11, label="Phone number", widget=forms.TextInput(
+        attrs={"class": "form-control col=md-6", "placeholder": "Enter your phone number"}),
+                                   error_messages={
+                                       "required": "Please enter your phone number",
+                                       "invalid": "Please enter a valid phone number",
+                                       "max_length": "Phone number cannot be longer than 11 characters",
+                                   })
