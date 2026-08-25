@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f4bce06-0fad-4783-86ea-c4c06b5b8936" name="Changes" comment="implement register and products">
+    <list default="true" id="4f4bce06-0fad-4783-86ea-c4c06b5b8936" name="Changes" comment="bucket setting added">
+      <change afterPath="$PROJECT_DIR$/shop/celery_conf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/products_image/2026/08/19/download.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/products_image/2026/08/22/item2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/products_image/2026/08/22/item3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/products_image/2026/08/22/library.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/products_image/2026/08/22/the-midnight-library.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,12 +98,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787405585286</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="bucket setting added">
+      <option name="closed" value="true" />
+      <created>1787593472119</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1787593472119</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="html files" />
     <MESSAGE value="implement register and products" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement register and products" />
+    <MESSAGE value="bucket setting added" />
+    <option name="LAST_COMMIT_MESSAGE" value="bucket setting added" />
   </component>
 </project>
