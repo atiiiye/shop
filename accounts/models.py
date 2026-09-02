@@ -1,5 +1,5 @@
-from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
+from django.db import models
 
 from accounts.managers import UserManager
 
@@ -31,7 +31,7 @@ class User(AbstractBaseUser):
 
 
 class OtpCode(models.Model):
-    phone_number=models.CharField(max_length=11)
+    phone_number=models.CharField(max_length=11, unique=True)
     code=models.PositiveSmallIntegerField()
     created=models.DateTimeField(auto_now=True)
 
