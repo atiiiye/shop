@@ -108,7 +108,31 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'
+
+# ARVAN CLOUD OBJECT STORAGES
+AWS_SERVICE_NAME = "s3"
+AWS_ACCESS_KEY_ID = "ce1dc44a-efd8-4c86-ae07-6afd274f4861"
+AWS_SECRET_ACCESS_KEY = "d80ba996a624bc23eeccc1572c0e76dfa306389893e840c6cd6b8e6fae621c0a"
+AWS_S3_ENDPOINT_URL = "https://s3.ir-thr-at1.arvanstorage.ir"
+AWS_BUCKET_NAME = "test-shopping"
+AWS_LOCAL_STORAGE = f"{BASE_DIR} /aws/"
+
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3.S3Storage",
+        "OPTIONS": {
+            "access_key": AWS_ACCESS_KEY_ID,
+            "secret_key": AWS_SECRET_ACCESS_KEY,
+            "endpoint_url": AWS_S3_ENDPOINT_URL,
+            "bucket_name": AWS_BUCKET_NAME,
+            "file_overwrite": False
+        },
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    }
+}
 
 USE_I18N = True
 
