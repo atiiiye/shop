@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'accounts.apps.AccountsConfig',
     'products.apps.ProductsConfig',
-    'storages'
+    'storages',
+    'django_celery_beat'
 ]
 
 MIDDLEWARE = [
@@ -152,20 +153,3 @@ STATICFILES_DIRS =[
 
 MEDIA_URL= '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
-#ARVAN CLOUD OBJECT STORAGES
-STORAGES = {
-    "default": {
-        "BACKEND": "storages.backends.s3.S3Storage",
-        "OPTIONS": {
-            "access_key":"ce1dc44a-efd8-4c86-ae07-6afd274f4861",
-            "secret_key":"d80ba996a624bc23eeccc1572c0e76dfa306389893e840c6cd6b8e6fae621c0a",
-            "endpoint_url":"https://s3.ir-thr-at1.arvanstorage.ir",
-            "bucket_name":"test-shopping",
-            "file_overwrite":False
-        },
-    },
-    "staticfiles":{
-        "BACKEND":"django.contrib.staticfiles.storage.StaticFilesStorage",
-    }
-}
