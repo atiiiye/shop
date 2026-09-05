@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f4bce06-0fad-4783-86ea-c4c06b5b8936" name="Changes" comment="developed" />
+    <list default="true" id="4f4bce06-0fad-4783-86ea-c4c06b5b8936" name="Changes" comment="update admin.py for category">
+      <change afterPath="$PROJECT_DIR$/accounts/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bucket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/home/bucket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/celery_conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/celery_conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/inc/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,15 +162,7 @@
       <option name="project" value="LOCAL" />
       <updated>1788625699949</updated>
     </task>
-    <task id="LOCAL-00010" summary="developed">
-      <option name="closed" value="true" />
-      <created>1788627312199</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1788627312199</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -165,7 +174,6 @@
     <MESSAGE value="custom command management" />
     <MESSAGE value="set celery confing" />
     <MESSAGE value="update admin.py for category" />
-    <MESSAGE value="developed" />
-    <option name="LAST_COMMIT_MESSAGE" value="developed" />
+    <option name="LAST_COMMIT_MESSAGE" value="update admin.py for category" />
   </component>
 </project>
