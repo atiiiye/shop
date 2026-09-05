@@ -1,15 +1,15 @@
+from datetime import timedelta
+
+from django.contrib import messages
 from django.contrib.auth import logout, login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
+from django.utils import timezone
 from django.views import View
 
 from utils import send_otp_code, generate_otp
 from .forms import UserRegistrationForm, VerifyCodeForm, UserLoginForm
-from django.contrib import messages
 from .models import OtpCode, User
-
-from datetime import timedelta
-from django.utils import timezone
 
 
 class UserRegisterView(View):
@@ -59,6 +59,7 @@ class UserRegistrationVerifyCodeView(View):
             cd = form.cleaned_data
             if timezone.now() > expired_time:
                 messages.error(request, 'Code is expired', 'danger')
+                code_instance.delete()
                 return redirect('accounts:user_register')
 
             if cd['code'] == code_instance.code and timezone.now() < expired_time:
@@ -103,6 +104,7 @@ class UserLoginView(View):
 
             code = generate_otp()
             send_otp_code(phone_number=cd['phone_number'], code=code)
+            OtpCode.objects.filter(phone_number=cd['phone_number']).delete()
             OtpCode.objects.create(phone_number=cd['phone_number'], code=code)
             request.session['user_login_info'] = {
                 'phone_number': cd['phone_number'],
@@ -115,10 +117,11 @@ class UserLoginView(View):
 
 class UserLoginVerifyCodeView(View):
     form_class = VerifyCodeForm
+    template_name = 'accounts/verify.html'
 
     def get(self, request):
         form = self.form_class
-        return render(request, 'accounts/verify.html', {"form": form})
+        return render(request, self.template_name, {"form": form})
 
     def post(self, request):
         form = self.form_class(request.POST)
@@ -129,6 +132,7 @@ class UserLoginVerifyCodeView(View):
             cd = form.cleaned_data
             if timezone.now() > expired_time:
                 messages.error(request, 'Code is expired', 'danger')
+                code_instance.delete()
                 return redirect('accounts:user_login')
 
             if cd['code'] == code_instance.code and timezone.now() < expired_time:

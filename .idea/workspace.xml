@@ -4,10 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f4bce06-0fad-4783-86ea-c4c06b5b8936" name="Changes" comment="bucket setting added">
-      <change afterPath="$PROJECT_DIR$/shop/celery_conf.py" afterDir="false" />
+    <list default="true" id="4f4bce06-0fad-4783-86ea-c4c06b5b8936" name="Changes" comment="update admin.py for category">
+      <change afterPath="$PROJECT_DIR$/accounts/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bucket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/home/bucket.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/celery_conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/celery_conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/inc/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +50,9 @@
     &quot;accountId&quot;: &quot;85723d92-1ed7-4c31-b202-f4a0b4e91a69&quot;
   }
 }</component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -50,7 +66,7 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Color Scheme Font&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -106,13 +122,58 @@
       <option name="project" value="LOCAL" />
       <updated>1787593472119</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added celery">
+      <option name="closed" value="true" />
+      <created>1787687855330</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1787687855330</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix otp code bug">
+      <option name="closed" value="true" />
+      <created>1788364693641</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1788364693641</updated>
+    </task>
+    <task id="LOCAL-00007" summary="custom command management">
+      <option name="closed" value="true" />
+      <created>1788423540935</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1788423540935</updated>
+    </task>
+    <task id="LOCAL-00008" summary="set celery confing">
+      <option name="closed" value="true" />
+      <created>1788467466837</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1788467466837</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update admin.py for category">
+      <option name="closed" value="true" />
+      <created>1788625699949</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1788625699949</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="html files" />
     <MESSAGE value="implement register and products" />
     <MESSAGE value="bucket setting added" />
-    <option name="LAST_COMMIT_MESSAGE" value="bucket setting added" />
+    <MESSAGE value="added celery" />
+    <MESSAGE value="fix otp code bug" />
+    <MESSAGE value="custom command management" />
+    <MESSAGE value="set celery confing" />
+    <MESSAGE value="update admin.py for category" />
+    <option name="LAST_COMMIT_MESSAGE" value="update admin.py for category" />
   </component>
 </project>

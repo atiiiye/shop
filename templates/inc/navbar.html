@@ -5,20 +5,23 @@
                 <a class="nav-link {% if request.resolver_match.view_name == 'home:home' %} active {% endif %}"
                    href='{% url "home:home" %}'>Home</a>
                 {% if request.user.is_authenticated %}
-                    <div class="d-flex">
                     <p class="mb-0 text-secondary fw-bold p-2">
                         <i class="fa fa-user me-2" style="font-size:18px"></i>
-                        {{request.user.username}}
-                    </p>
+                        {{request.user.full_name}}
+                     </p>
+                    {% if request.user.is_admin %}
+                        <a class="nav-link {% if request.resolver_match.view_name == 'home:bucket' %} active {% endif %}"
+                            href='{% url "home:bucket"%}'>Bucket</a>
+                    {% endif %}
                     <a class="nav-link btn btn-light border border-2 {% if request.resolver_match.view_name == 'account:user_logout' %} active {% endif %}"
-                       href='{% url "accounts:user_logout"%}'>Logout</a>
-                </div>
+                        href='{% url "accounts:user_logout"%}'>Logout</a>
                 {% else %}
                     <a class="nav-link {% if request.resolver_match.view_name == 'accounts:user_login' %} active {% endif %}"
-                   href='{% url "accounts:user_login" %}'>Login</a>
-                <a class="nav-link {% if request.resolver_match.view_name == 'accounts:user_register' %} active {% endif %}"
-                   href='{% url "accounts:user_register" %}'>Signup</a>
+                        href='{% url "accounts:user_login" %}'>Login</a>
+                    <a class="nav-link {% if request.resolver_match.view_name == 'accounts:user_register' %} active {% endif %}"
+                        href='{% url "accounts:user_register" %}'>Signup</a>
                 {% endif %}
             </div>
         </div>
+    </div>
 </nav>
