@@ -5,9 +5,15 @@
 <div class="card">
     <div class="card-body">
         <img src="{{ product.image.url}}" style="width:300px" alt="">
-<h2>{{product.name}}</h2>
-<p>{{product.description}}</p>
-<small>{{product.price}} Toman</small>
+        <h2>{{product.name}}</h2>
+        <p>{{product.description}}</p>
+        <small>{{product.price}} Toman</small>
+        <form action="{% url 'orders:cart_add' product.id %}" method="post" class="d-flex align-items-center">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn btn-primary ms-2" type="submit">Add to Cart</button>
+        </form>
+
     </div>
 </div>
 {% endblock %}
