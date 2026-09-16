@@ -9,6 +9,7 @@
       <th scope="col">Count</th>
       <th scope="col">Unit Price</th>
       <th scope="col">Total Price</th>
+      <th scope="col">Remove</th>
     </tr>
   </thead>
   <tbody>
@@ -19,9 +20,13 @@
       <td>{{ item.quantity }}</td>
       <td>{{ item.price }}</td>
       <td>{{ item.total_price }}</td>
+      <td><a href="{% url 'orders:cart_remove' item.product.id %}" role="button" class="btn btn-outline-danger"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
     </tr>
 {% endfor %}
-
+  <tr>
+    <td colspan="5 "><strong>Total</strong></td>
+    <td><strong>{{cart.get_total_price}}</strong></td>
+  </tr>
   </tbody>
 </table>
 
