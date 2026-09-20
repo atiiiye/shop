@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f4bce06-0fad-4783-86ea-c4c06b5b8936" name="Changes" comment="feat: set context processors">
+    <list default="true" id="4f4bce06-0fad-4783-86ea-c4c06b5b8936" name="Changes" comment="feat: orders model">
+      <change afterPath="$PROJECT_DIR$/orders/templates/orders/order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/templates/orders/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/orders/templates/orders/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -190,7 +193,23 @@
       <option name="project" value="LOCAL" />
       <updated>1789768150878</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: orders model">
+      <option name="closed" value="true" />
+      <created>1789898638320</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1789898638320</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: orders model">
+      <option name="closed" value="true" />
+      <created>1789898643656</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1789898643656</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,6 +242,7 @@
     <MESSAGE value="feat: orders app &amp; shopping cart" />
     <MESSAGE value="feat: remove product from cart" />
     <MESSAGE value="feat: set context processors" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: set context processors" />
+    <MESSAGE value="feat: orders model" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: orders model" />
   </component>
 </project>
