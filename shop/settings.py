@@ -159,3 +159,10 @@ STATICFILES_DIRS =[
 
 MEDIA_URL= '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+# ZARINPAL
+ZP_API_REQUEST="https://payment.zarinpal.com/pg/v4/payment/request.json"
+ZP_API_VERIFY="https://payment.zarinpal.com/pg/v4/payment/verify.json"
+ZP_MERCHANT_ID="40edcf4d-8624-486d-b2be-7254071bd6de"
+ZP_API_STARTPAY="https://payment.zarinpal.com/pg/StartPay"
