@@ -44,7 +44,7 @@ class UserRegistrationForm(forms.Form):
                                  "max_length": "Phone number cannot be longer than 255 characters",
                              })
     phone_number = forms.CharField(max_length=11, label="Phone number", widget=forms.TextInput(
-        attrs={"class": "form-control col=md-6", "placeholder": "Enter your phone number"}),
+        attrs={"class": "form-control col-md-6", "placeholder": "Enter your phone number"}),
                                    error_messages={
                                        "required": "Please enter your phone number",
                                        "invalid": "Please enter a valid phone number",
@@ -87,7 +87,7 @@ class VerifyCodeForm(forms.Form):
 
 class UserLoginForm(forms.Form):
     phone_number = forms.CharField(max_length=11, label="Phone number", widget=forms.TextInput(
-        attrs={"class": "form-control col=md-6", "placeholder": "Enter your phone number"}),
+        attrs={"class": "form-control col-md-6", "placeholder": "Enter your phone number"}),
                                    error_messages={
                                        "required": "Please enter your phone number",
                                        "invalid": "Please enter a valid phone number",
