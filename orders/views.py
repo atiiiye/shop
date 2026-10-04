@@ -1,16 +1,17 @@
+import datetime
 import json
 
 import requests
 from django.conf import settings
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.messages.context_processors import messages
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
 
 from products.models import Product
 from .cart import Cart
-from .forms import CartAddForm
-from .models import Order, OrderItem
+from .forms import CartAddForm, DiscountApplyForm
+from .models import Order, OrderItem, DiscountCode
 
 
 class CartView(LoginRequiredMixin, View):
@@ -38,9 +39,11 @@ class CartRemoveView(View):
 
 
 class OrderDetailView(LoginRequiredMixin, View):
+    form_class = DiscountApplyForm
+
     def get(self, request, order_id):
         order = get_object_or_404(Order, id=order_id)
-        return render(request, 'orders/order.html', {'order': order})
+        return render(request, 'orders/order.html', {'order': order, 'form': self.form_class})
 
 
 class OrderCreateView(LoginRequiredMixin, View):
@@ -96,22 +99,37 @@ class OrderVerifyView(LoginRequiredMixin, View):
                 req_data), headers=req_header)
 
             if len(verify_req.json()["error"]) == 0 and verify_req.json()['data']['code'] == 100:
-                order.paid= True
+                order.paid = True
                 order.save()
                 messages.success(request, "Your order registered successfully", 'success')
                 return redirect('home:home')
             else:
                 error_code = verify_req.json()['errors']['code']
                 error_message = verify_req.json()['errors']['message']
-                messages.error(request,f"Error {error_code} ! {error_message}","danger")
+                messages.error(request, f"Error {error_code} ! {error_message}", "danger")
                 return redirect('home:home')
         else:
             messages.error(request, "Error! Something went wrong", "danger")
             return redirect("home:home")
 
 
+class DiscountApplyView(LoginRequiredMixin, View):
+    form_class = DiscountApplyForm
 
+    def post(self, request, order_id):
+        now = datetime.datetime.now()
+        form= self.form_class(request.POST)
+        if form.is_valid():
+            code= form.cleaned_data['code']
+            try:
+                discount= DiscountCode.objects.get(code__exact=code, valid_from__lte=now, valid_to__gte=now, active=True)
+            except DiscountCode.DoesNotExist:
+                messages.error(request,'Code is invalid','danger')
+                return redirect('orders:order_detail' , order_id)
 
-
+            order=Order.objects.get(id=order_id)
+            order.discount=discount.discount
+            order.save()
+            return redirect('orders:order_detail' , order_id)
 
 

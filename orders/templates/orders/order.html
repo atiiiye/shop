@@ -3,5 +3,16 @@
 {% block content %}
 <h3>Order Details</h3>
 <p><strong>Total price : {{ order.get_total_price }}</strong></p>
-<a href="{% url 'orders:order_pay' order.id %}" class="btn btn-primary">Pay</a>
+<a href="{% url 'orders:order_pay' order.id %}" class="btn btn-primary col-md-4">Pay</a>
+
+<form action="{% url 'orders:apply_discount' order.id %}" method="post" class="mt-5">
+    {% csrf_token %}
+
+    <label class="pb-2">{{form.code.label}}</label>
+
+    <div class="d-flex align-items-center gap-3 col-4">
+        {{ form.code }}
+        <button class="btn btn-warning text-white py-2" type="submit">Apply</button>
+    </div>
+</form>
 {% endblock content %}
