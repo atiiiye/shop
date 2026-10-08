@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1
+
 
 # Application definition
 
@@ -46,7 +48,8 @@ INSTALLED_APPS = [
 
     # third party apps
     'storages',
-    'django_celery_beat'
+    'django_celery_beat',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
