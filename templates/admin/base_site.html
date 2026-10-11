@@ -1,0 +1,12 @@
+{% extends 'admin/base_site.html' %}
+{% load static %}
+
+{% block branding %}
+
+<div id="site-name" style="display:flex;gap:8px">
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'logo.png' %}" alt="logo" style="width:30px; height:30px"/>
+    </a>
+    {{ block.super }}
+</div>
+{% endblock %}
