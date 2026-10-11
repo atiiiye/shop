@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f4bce06-0fad-4783-86ea-c4c06b5b8936" name="Changes" comment="feat: sitemap">
+    <list default="true" id="4f4bce06-0fad-4783-86ea-c4c06b5b8936" name="Changes" comment="feat: superuser permissions">
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/password_reset_complete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/password_reset_confirm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/password_reset_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/password_reset_email.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/password_reset_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/admin/accounts/user/change_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/base_site.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -54,10 +66,14 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/my-practices/django/shop/shop/static&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\my-practices\django\shop\shop\static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\my-practices\django\shop\shop\home\templates\home" />
     </key>
@@ -262,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791476413872</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="feat: superuser permissions">
+      <option name="closed" value="true" />
+      <created>1791477077489</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1791477077489</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -303,6 +327,7 @@
     <MESSAGE value="feat: discount code" />
     <MESSAGE value="feat: set groups and permissions" />
     <MESSAGE value="feat: sitemap" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: sitemap" />
+    <MESSAGE value="feat: superuser permissions" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: superuser permissions" />
   </component>
 </project>

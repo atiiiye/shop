@@ -4,7 +4,7 @@
 <h2>Login form</h2>
 <form method="post" action="" novalidate class="d-flex flex-column align-items-center py-5">
     {% csrf_token %}
-    <div class="row col-6 align-items-center justify-content-center">
+    <div class="row col-6 align-items-center justify-content-center mb-2">
         <div class="mb-2">
             {{form.phone_number.label}}
             {{ form.phone_number }}
@@ -16,5 +16,7 @@
 
         <button class="btn btn-primary col-md-4 py-2 mt-3" type="submit">Login</button>
     </div>
+<a href="{% url 'accounts:user_reset_password' %}">Forget your password?</a>
 </form>
+
 {% endblock content%}
