@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.shortcuts import redirect
+from django.utils.safestring import mark_safe
 
 from .forms import UserChangeForm, UserCreationForm
 from .models import User, OtpCode, Avatar
@@ -44,7 +45,13 @@ class UserAdmin(BaseUserAdmin):
         return super().response_change(request, obj)
 
 admin.site.register(User, UserAdmin)
-admin.site.register(Avatar)
+
+@admin.register(Avatar)
+class AvatarAdmin(admin.ModelAdmin):
+    readonly_fields = ["avatar_preview"]
+    
+    def avatar_preview(self, obj):
+        return mark_safe(f"<img src='{obj.image.url}' width='300px'/> ")
 
 @admin.register(OtpCode)
 class OtpCodeAdmin(admin.ModelAdmin):
