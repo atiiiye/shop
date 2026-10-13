@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
 
 from accounts.managers import UserManager
+from accounts.validators import avatar_upload_path
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -23,6 +24,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     def is_staff(self):
         return self.is_admin
 
+
+class Avatar(models.Model):
+    user= models.OneToOneField(User, on_delete=models.CASCADE)
+    image= models.ImageField(upload_to=avatar_upload_path)
+
+    def __str__(self):
+        return self.user.full_name
 
 class OtpCode(models.Model):
     phone_number=models.CharField(max_length=11, unique=True)

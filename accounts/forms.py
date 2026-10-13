@@ -2,7 +2,8 @@ from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 
-from .models import User, OtpCode
+from .models import User, OtpCode, Avatar
+from .validators import validate_avatar, process_image
 
 
 class UserCreationForm(forms.ModelForm):
@@ -93,3 +94,16 @@ class UserLoginForm(forms.Form):
                                        "invalid": "Please enter a valid phone number",
                                        "max_length": "Phone number cannot be longer than 11 characters",
                                    })
+
+
+class UserAvatarForm(forms.ModelForm):
+    class Meta:
+        model = Avatar
+        fields = ["image"]
+
+    def clean_image(self):
+        avatar = self.cleaned_data.get('image')
+        if not avatar:
+            raise ValidationError("please select an image")
+        validate_avatar(avatar)
+        return process_image(avatar)

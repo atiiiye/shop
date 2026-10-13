@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.shortcuts import redirect
 
 from .forms import UserChangeForm, UserCreationForm
-from .models import User, OtpCode
+from .models import User, OtpCode, Avatar
 
 
 class UserAdmin(BaseUserAdmin):
@@ -28,15 +29,22 @@ class UserAdmin(BaseUserAdmin):
     filter_horizontal = ["groups", "user_permissions"]
 
     def get_form(self,request, obj=None, **kwargs):
-        form=super().get_form(request,obj, **kwargs)
-        is_superuser= request.user.is_superuser
+        form=super().get_form(request, obj, **kwargs)
+        is_superuser = request.user.is_superuser
         if not is_superuser :
             form.base_fields['is_superuser'].disabled=True
         return form
 
+    def response_change(self, request, obj):
+        if '_saveupper' in request.POST:
+            obj.full_name=obj.full_name.upper()
+            obj.save()
+            self.message_user(request, 'full name save upper case')
+            return redirect('admin:accounts_user_changelist')
+        return super().response_change(request, obj)
 
 admin.site.register(User, UserAdmin)
-
+admin.site.register(Avatar)
 
 @admin.register(OtpCode)
 class OtpCodeAdmin(admin.ModelAdmin):

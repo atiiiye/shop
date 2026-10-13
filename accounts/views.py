@@ -10,7 +10,7 @@ from django.utils import timezone
 from django.views import View
 
 from utils import send_otp_code, generate_otp
-from .forms import UserRegistrationForm, VerifyCodeForm, UserLoginForm
+from .forms import UserRegistrationForm, VerifyCodeForm, UserLoginForm, UserAvatarForm
 from .models import OtpCode, User
 
 
@@ -165,6 +165,7 @@ class UserPasswordResetView(auth_views.PasswordResetView):
 class UserPasswordResetDoneView(auth_views.PasswordResetDoneView):
     template_name = "accounts/password_reset_done.html"
 
+
 class UserPasswordConfirmView(auth_views.PasswordResetConfirmView):
     template_name = 'accounts/password_reset_confirm.html'
     success_url = reverse_lazy('accounts:password_reset_complete')
@@ -172,3 +173,20 @@ class UserPasswordConfirmView(auth_views.PasswordResetConfirmView):
 
 class UserPasswordResetCompleteView(auth_views.PasswordResetCompleteView):
     template_name = 'accounts/password_reset_complete.html'
+
+
+class UserUploadAvatarView(LoginRequiredMixin, View):
+    form_class = UserAvatarForm
+
+    def get(self, request):
+        return render(request, 'accounts/avatar.html', {'form': self.form_class})
+
+    def post(self, request):
+        form = self.form_class(request.POST, request.FILES)
+        if form.is_valid():
+            a = form.save(commit=False)
+            a.user = request.user
+            a.save()
+            messages.success(request, 'Avatar saved', 'success')
+            return redirect("home:home")
+        return render(request, "accounts/avatar.html", {'form': form})
