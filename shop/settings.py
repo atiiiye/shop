@@ -151,26 +151,68 @@ AUTH_USER_MODEL = "accounts.User"
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS =[
+STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-
-MEDIA_URL= '/media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-
 # ZARINPAL
-ZP_API_REQUEST="https://payment.zarinpal.com/pg/v4/payment/request.json"
-ZP_API_VERIFY="https://payment.zarinpal.com/pg/v4/payment/verify.json"
-ZP_MERCHANT_ID="40edcf4d-8624-486d-b2be-7254071bd6de"
-ZP_API_STARTPAY="https://payment.zarinpal.com/pg/StartPay"
-
+ZP_API_REQUEST = "https://payment.zarinpal.com/pg/v4/payment/request.json"
+ZP_API_VERIFY = "https://payment.zarinpal.com/pg/v4/payment/verify.json"
+ZP_MERCHANT_ID = "40edcf4d-8624-486d-b2be-7254071bd6de"
+ZP_API_STARTPAY = "https://payment.zarinpal.com/pg/StartPay"
 
 # GOOGLE APP PASSWORDS
-EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST="smtp.gmail.com"
-EMAIL_HOST_PASSWORD=""
-EMAIL_HOST_USER=""
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_PASSWORD = ""
+EMAIL_HOST_USER = ""
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
+# LOGGING
+LOGGING={
+    "version":1,
+    "disabled_existing_loggers":False,
+    "formatters":{
+        "verbose":{
+            "format":"{name} {levelname} {asctime} {module} {message}",
+            "style":"{"
+        },
+        "simple":{
+            "format": "{levelname} {message}",
+            "style": "{"
+        }
+    },
+    "handlers":{
+        "file":{
+            "class":"logging.FileHandler",
+            "filename":"logs/general.log",
+            "level":"DEBUG",
+            "formatter":"verbose"
+        },
+        "console":{
+            "class":"logging.StreamHandler"
+        },
+        "file_rotate":{
+            "class":"logging.handlers.RotatingFileHandler",
+            "filename":"logs/app.log",
+            "maxBytes": 10 * 1024 * 1024,
+            "backupCount":10
+        },
+    },
+    "loggers": {
+        "":{
+            "level":"DEBUG",
+            "handler":["file"]
+        },
+        "accounts":{
+            "level": "INFO",
+            "handler":["file"],
+            "propagate":False
+        }
+    }
+}
